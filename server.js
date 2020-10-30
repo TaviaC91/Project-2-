@@ -59,6 +59,11 @@ app. get('/library', (req, res) => {
       })
     })
   })
+
+  //New Route////
+  app.get('/library/new', (res, req) => {
+      res.render('new.ejs')
+  })
   
 //localhost:3000
 app.get('/' , (req, res) => {
