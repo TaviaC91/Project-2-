@@ -50,12 +50,12 @@ const Books = require("./models/library.js")
 
 //___________________
 
-// Index Routes/////
+// Index Routes///// 
 app. get('/library', (req, res) => {
     Books.find({}, (error, allBooks) => {
-      console.log(allLibrary)
+      console.log(allBooks)
       res.render('index.ejs', {
-        library: allLibrary
+        library: allBooks
       })
     })
   })
@@ -63,6 +63,16 @@ app. get('/library', (req, res) => {
   //New Route////
   app.get('/library/new', (res, req) => {
       res.render('new.ejs')
+  })
+
+  //Create Route////
+  app.post('/library', (req, res) => {
+    // console.log(req.body)
+    Books.create(req.body, (error, createdBook) => {
+      if(error) {
+        console.log(error)
+      } else {res.redirect('/library')}
+    })
   })
   
 //localhost:3000
