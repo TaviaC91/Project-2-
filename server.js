@@ -34,7 +34,7 @@ db.on('open' , ()=>{});
 //___________________
 
 //use public folder for static assets
-app.use(express.static('public'));
+app.use(express.static("public"));
 
 // populates req.body with parsed info from forms - if no data from forms will return an empty object {}
 app.use(express.urlencoded({ extended: false }));// extended: false - does not allow nested objects in query strings
@@ -51,32 +51,32 @@ const Books = require("./models/library.js")
 //___________________
 
 // Index Routes///// 
-app. get('/library', (req, res) => {
+app. get("/library", (req, res) => {
     Books.find({}, (error, allBooks) => {
       console.log(allBooks)
-      res.render('index.ejs', {
-        library: allBooks
+      res.render("index.ejs", {
+        books: allBooks
       })
     })
   })
 
   //New Route////
-  app.get('/library/new', (res, req) => {
-      res.render('new.ejs')
+  app.get("/library/new", (req, res) => {
+      res.render("new.ejs")
   })
 
   //Create Route////
-  app.post('/library', (req, res) => {
+  app.post("/library", (req, res) => {
     // console.log(req.body)
     Books.create(req.body, (error, createdBook) => {
       if(error) {
         console.log(error)
-      } else {res.redirect('/library')}
+      } else {res.redirect("/library")}
     })
   })
   
 //localhost:3000
-app.get('/' , (req, res) => {
+app.get("/" , (req, res) => {
   res.send('Hello World!');
 });
 
