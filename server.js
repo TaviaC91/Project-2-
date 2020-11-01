@@ -1,86 +1,141 @@
-//___________________
-//Dependencies
-//___________________
+//Dependencies//////
+
 const express = require('express');
-const methodOverride  = require('method-override');
-const mongoose = require ('mongoose');
-const app = express ();
+const methodOverride = require('method-override');
+const mongoose = require('mongoose');
+const app = express();
 const db = mongoose.connection;
-//___________________
-//Port
-//___________________
-// Allow use of Heroku's port or your own local port, depending on the environment
+
+//Port/////
+
 const PORT = process.env.PORT || 3000;
 
-//___________________
-//Database
-//___________________
-// How to connect to the database either via heroku or locally
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/'+ `Project2`;
 
-// Connect to Mongo
-mongoose.connect(MONGODB_URI ,  { useNewUrlParser: true});
+///Database//////
 
-// Error / success
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/' + `Project2`;
+
+mongoose.connect(MONGODB_URI, {
+    useNewUrlParser: true
+});
+
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
 db.on('connected', () => console.log('mongo connected: ', MONGODB_URI));
 db.on('disconnected', () => console.log('mongo disconnected'));
 
-// open the connection to mongo
-db.on('open' , ()=>{});
+db.on('open', () => {});
 
-//___________________
-//Middleware
-//___________________
 
-//use public folder for static assets
+//Middleware////
+
 app.use(express.static("public"));
 
-// populates req.body with parsed info from forms - if no data from forms will return an empty object {}
-app.use(express.urlencoded({ extended: false }));// extended: false - does not allow nested objects in query strings
-app.use(express.json());// returns middleware that only parses JSON - may or may not need it depending on your project
 
-//use method override
-app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
+app.use(express.urlencoded({
+    extended: false
+})); 
+app.use(express.json()); 
 
-// 
+app.use(methodOverride('_method')); 
+
+
 const Books = require("./models/library.js")
-//___________________
-// Routes
 
-//___________________
 
-// Index Routes///// 
-app. get("/library", (req, res) => {
+
+/////// Routes/////
+
+
+////// Index Route///// 
+
+app.get("/library", (req, res) => {
     Books.find({}, (error, allBooks) => {
-      console.log(allBooks)
-      res.render("index.ejs", {
-        books: allBooks
-      })
+        console.log(allBooks)
+        res.render("index.ejs", {
+            books: allBooks
+        })
     })
-  })
+})
 
-  //New Route////
-  app.get("/library/new", (req, res) => {
-      res.render("new.ejs")
-  })
 
-  //Create Route////
-  app.post("/library", (req, res) => {
+///New Route////
+
+app.get("/library/new", (req, res) => {
+    res.render("new.ejs")
+})
+
+/// Show Route/////
+app.get("/library/:id", (req, res) => {
+    Books.findById(req.params.id, (error, foundBook) => {
+        res.render("show.ejs", {
+            book: foundBook
+        })
+    })
+})
+
+/// Edit Route////
+
+app.get("/library/:id/edit", (req, res) => {
+    Books.findById(req.params.id, (error, foundBooks) => {
+        if (error) {
+            console.log(error)
+        }
+        console.log(foundBooks)
+        res.render("edit.ejs", {
+            books: foundBooks
+        })
+    })
+})
+
+//Create Route////
+
+app.post("/library", (req, res) => {
     // console.log(req.body)
     Books.create(req.body, (error, createdBook) => {
-      if(error) {
-        console.log(error)
-      } else {res.redirect("/library")}
+        if (error) {
+            console.log(error)
+        } else {
+            res.redirect("/library")
+        }
     })
-  })
-  
-//localhost:3000
-app.get("/" , (req, res) => {
-  res.send('Hello World!');
+})
+
+////Update Route//
+
+app.put("/library/:id", (req, res) => {
+    Books.findByIdAndUpdate(req.params.id, req.body, {
+        new: true
+    }, (error, updatedModel) => {
+        console.log(req.body)
+        if (error) {
+            console.log(error)
+        }
+        res.redirect("/library")
+    })
+})
+
+
+//Delete Route ////
+
+app.delete("/library/:id", (req, res) => {
+    Books.findByIdAndRemove(req.params.id, {
+        userFindAndModify: false
+    }, (error, data) => {
+        res.redirect("/library")
+    })
+})
+
+
+
+
+//localhost:3000/////
+
+app.get("/", (req, res) => {
+    res.send('Hello World!');
 });
 
-//___________________
-//Listener
-//___________________
-app.listen(PORT, () => console.log( 'Listening on port:', PORT));
+
+
+//Listener Port////////
+
+app.listen(PORT, () => console.log('Listening on port:', PORT));

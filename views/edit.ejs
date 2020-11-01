@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang=“en”>
+<head>
+    <meta charset="UTF-8">
+    <meta name=“viewport” content="width=device-width, initial-scale=1.0">
+    <title> Edit Page</title>
+</head>
+<body>
+    <form action="/library/<%= books.id%>?_method=PUT" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" value="<%=books.name%>"> <br>
+        <label for="img">Image:</label>
+        <input type="text" name="img" value="<%=books.img%>"> <br>
+        <label for="overview">Overview</label>
+        <input type="textarea" name="overview" id="overview" value="<%=books.overview%>"> <br>
+        <label for="genre">Genre:</label>
+        <input type="text" name="genre" id="genre" value="<%=books.genre%>"> <br>
+        <label for="price">Price:</label>
+        <input type="text" name="price" id="price" value="<%=books.price%>"> <br>
+        
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
