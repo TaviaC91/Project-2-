@@ -1,16 +1,7 @@
- h1 {
-text-align: left;
-font-style: normal;
-margin: 10px;
+body{
+background-color:blanchedalmond;
+color: black;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.container{
-display: flexbox
 }
-
-img {
-line-height: 100;
-padding: 5px;
-width:100;
-}
-
