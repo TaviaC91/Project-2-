@@ -1,0 +1,16 @@
+ h1 {
+text-align: left;
+font-style: normal;
+margin: 10px;
+}
+
+.container{
+display: flexbox
+}
+
+img {
+line-height: 100;
+padding: 5px;
+width:100;
+}
+

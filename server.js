@@ -90,7 +90,7 @@ app.get("/library/:id/edit", (req, res) => {
 //Create Route////
 
 app.post("/library", (req, res) => {
-    // console.log(req.body)
+    console.log(req.body)
     Books.create(req.body, (error, createdBook) => {
         if (error) {
             console.log(error)
