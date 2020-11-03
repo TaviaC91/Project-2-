@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 const librarySchema = new mongoose.Schema({
     name: {type: String, required: true},
-    img: String,
+    img: {String},
     price: {type: Number, required: true},
     genre: {type: String, required: true},
     overview: {type: String, required: true}

@@ -13,8 +13,8 @@
         <nav>
             <a href="/library/new">Add New Listing</a>
         </nav>
-        <div class="flex-container">
-    
+        <div class="grid-container">
+        <p>
         <% for( let i = 0; i < books.length; i++ ) { %>
             <h1><%= books[i].name %> </h1>
             <a href="/library/<%= books[i].id %>"><img src=" <%= books[i].img %>  " alt=""></a> <br>
@@ -25,6 +25,7 @@
                 <input type="submit"  value="DELETE"/>
             </form>
             <button class="btn btn-default" ><a href="/library/<%= books[i].id %>/edit">EDIT</a></button>
+        </p>
         </div>
         <% } %>
     </ul>

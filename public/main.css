@@ -12,9 +12,10 @@ width: 200px;
 height: 200px;
 }
 
-/* 
-.container {
-display: flex;
-} */
+
+h1 {
+text-decoration: black;
+text-shadow: 2px 2px black
+}
 
 
