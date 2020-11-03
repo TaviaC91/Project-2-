@@ -4,7 +4,8 @@ const librarySchema = new mongoose.Schema({
     img: {String},
     price: {type: Number, required: true},
     genre: {type: String, required: true},
-    overview: {type: String, required: true}
+    overview: {type: String, required: true},
+    CustomerReview: {type: String, required: true}
 },
 {timestamps: true})
 const Books = mongoose.model("Books", librarySchema)

@@ -1,5 +1,12 @@
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: auto;
+}
+
+
 body{
-background-color: blanchedalmond;
+background-color: aliceblue;
 color: black;
 font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 text-align: left;
@@ -12,10 +19,7 @@ width: 200px;
 height: 200px;
 }
 
-
 h1 {
-text-decoration: black;
-text-shadow: 2px 2px black
-}
-
-
+  text-decoration:  black;
+  text-shadow: 2px 2px 2px black
+  }
