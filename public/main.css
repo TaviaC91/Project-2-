@@ -11,21 +11,25 @@ color: black;
 font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 text-align: left;
 border: rgb(224, 158, 59);
+/* position: static; */
 }
 
 img{
 size: 200px;
 width: 200px;
 height: 200px;
+padding: 20px ;
+padding-inline: ;
 }
 
 h1 {
   text-decoration:  black;
   text-shadow: 2px black;
+  font: xx-small;
   }
 
 .header {
-  /* background-image: url('https://www.canva.com/design/DAEMhCSyxvQ/epcRBaLtI4QqMEBI9H_yUg/view?utm_content=DAEMhCSyxvQ&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton&mode=preview'); */
+  background-image: url('https://www.canva.com/design/DAEMhCSyxvQ/epcRBaLtI4QqMEBI9H_yUg/view?utm_content=DAEMhCSyxvQ&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton&mode=preview');
   padding: 50px;
   justify-content: center; 
   text-align: center;
@@ -39,6 +43,9 @@ h1 {
   font-size: 18px;
 }
 
+.nav {
+  display: flex;
+}
 
 /* show Page css */
 
