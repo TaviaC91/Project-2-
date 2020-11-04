@@ -4,21 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <!-- <link href="show.css" rel="stylesheet" type="text/css"> -->
+    <link rel="stylesheet" href="../public/show.css"  type="text/css">
     <title>Book Show Page</title>
 </head>
 <body>
-    <div class="container">
-    <div id="Show"></div>
-    <p>
-    <!-- <h6><%= book.name %></h6> <br>
-    <h6>Price:</h6></h6> <h6><%= book.price %></h6> <br> -->
+    <div class="showcontainer">
+    <!-- <div id="Show"></div> -->
+   <div class="showdiv1">
+     <h2><%= book.name %></h2> <br>
+   
     <a href="/library/<%= book.id %> "><img src=" <%= book.img%>" alt=""> </a> <br>
-    </p> 
+    <h6>Price:</h6> <h6><%= book.price %></h6> <br>
+    </div>
 
+
+
+<div class="showinfo">
+     <p class="showgenre">
+    <h4>Genre: <%= book.genre %>  </h4>
+     </p>
     <p>
-     <h6>Price:</h6></h6> <h6><%= book.price %></h6> <br>
-    Genre: <%= book.genre %> <br>
     Overview: <%= book.overview %> 
     </p>
   
@@ -30,11 +35,11 @@
         <button class="Borrow Book" data-id="3">Borrow Book</button></li>
     </div>
 
-     </p>
+     
     <nav>
         <a href="/library">Library</a>
     </nav>
-</p>
+</div>
 </div>
 
 

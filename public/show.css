@@ -1,2 +1,11 @@
+/* .genre {
+    padding: 0;
+    margin-top: 0;
+} */
+.showcontainer {
+    display: grid;
+    grid-area: auto;
+}
+
 
     

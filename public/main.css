@@ -6,7 +6,7 @@
 
 
 body{
-background-color: aliceblue;
+background-color: whitesmoke;
 color: black;
 font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 text-align: left;
@@ -21,5 +21,36 @@ height: 200px;
 
 h1 {
   text-decoration:  black;
-  text-shadow: 2px 2px 2px black
+  text-shadow: 2px black;
   }
+
+.header {
+  /* background-image: url('https://www.canva.com/design/DAEMhCSyxvQ/epcRBaLtI4QqMEBI9H_yUg/view?utm_content=DAEMhCSyxvQ&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton&mode=preview'); */
+  padding: 50px;
+  justify-content: center; 
+  text-align: center;
+  font-family: 'Architects Daughter', cursive; 
+  font-size: 70px;
+  font-weight: bolder;
+  text-shadow: 3px 3px 3px black; 
+} 
+
+.title {
+  font-size: 18px;
+}
+
+
+/* show Page css */
+
+.showcontainer {
+  display: grid;
+  grid-area: auto;
+}
+
+li {
+  border-right: 1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
