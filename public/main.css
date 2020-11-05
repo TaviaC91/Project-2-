@@ -1,6 +1,7 @@
 .grid-container {
   display: flex;
   flex-wrap: wrap;
+  text-align: center;
   padding: 20px;
   margin-top: 65px;
 }
@@ -68,14 +69,18 @@ h1 {
 
 .nav-link-wrapper {
 padding: 14px 16px;
+font-family: fantasy;
 justify-content: center;
+border: 3px solid peru;
 height: 22px;
 border-bottom: 1px solid transparent;
 transition: border-bottom 0.5s;
 border: 5px lightgray;
 }
 
-
+#board {
+  border: 3px 3px solid 
+}
 
 @media (max-width: 500px) {
   h1 {
@@ -85,5 +90,4 @@ border: 5px lightgray;
     Display: block;
     padding: 5px;
   }
-
 }
