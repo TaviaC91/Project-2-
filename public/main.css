@@ -11,7 +11,7 @@ color: black;
 font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 text-align: left;
 border: rgb(224, 158, 59);
-/* position: static; */
+position: static; 
 }
 
 img{
@@ -28,36 +28,48 @@ h1 {
   font: xx-small;
   }
 
-.header {
-  background-image: url('https://www.canva.com/design/DAEMhCSyxvQ/epcRBaLtI4QqMEBI9H_yUg/view?utm_content=DAEMhCSyxvQ&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton&mode=preview');
+.header { 
+ background-image: url('https://www.canva.com/design/DAEMhCSyxvQ/epcRBaLtI4QqMEBI9H_yUg/view?utm_content=DAEMhCSyxvQ&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton&mode=preview'); 
   padding: 50px;
-  justify-content: center; 
+  justify-content: center;  
   text-align: center;
   font-family: 'Architects Daughter', cursive; 
   font-size: 70px;
   font-weight: bolder;
-  text-shadow: 3px 3px 3px black; 
+  text-shadow: 3px 3px 3px black;  
 } 
 
 .title {
   font-size: 18px;
-}
+} 
 
 .nav {
   display: flex;
+} 
+
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 38px
 }
 
-/* show Page css */
-
-.showcontainer {
-  display: grid;
-  grid-area: auto;
+.left-side {
+  display: flex;
 }
 
-li {
-  border-right: 1px solid #bbb;
+.nav-wrapper > .left-side > div {
+  margin-right: 20px;
+  font-size: 0.20em;
+  text-transform: uppercase;
 }
 
-li:last-child {
-  border-right: none;
+.nav-link-wrapper {
+  height: 22px;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 0.5s;
 }
+
+.nav-link-wrapper {
+  color: #8a8a8a;
+  text-decoration: none;
