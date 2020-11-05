@@ -131,7 +131,7 @@ app.delete("/library/:id", (req, res) => {
 //localhost:3000/////
 
 app.get("/", (req, res) => {
-    res.send('Hello World!');
+    res.redirect("/library")
 });
 
 
