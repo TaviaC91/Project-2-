@@ -37,6 +37,7 @@ h1 {
   background-size: 100%;
   /* font-family: 'Architects Daughter', cursive;  */
    font-size: 70px;
+   height: 140px;
   /* font-weight: bolder;
   text-shadow: 3px 3px 3px black;    */
 } 
@@ -50,9 +51,9 @@ h1 {
   display: flex;
   flex-direction: row;
   padding: 14px 16px;
-  margin-top: 65px;
+  margin-top: 50px;
  
-  /* justify-content: center; */
+  justify-content: center;
 
 } 
 
@@ -63,15 +64,7 @@ h1 {
   padding: 38px;
 }
 
-/* .left-side {
-  display: flex;
-} */
 
-/* .nav-wrapper > .left-side > div {
-  margin-right: 20px;
-  font-size: 0.20em;
-  text-transform: uppercase;
-} */
 
 .nav-link-wrapper {
 padding: 14px 16px;
@@ -82,7 +75,15 @@ transition: border-bottom 0.5s;
 border: 5px lightgray;
 }
 
-/* .nav-link-wrapper {
-  color: #8a8a8a;
-  text-decoration: none;
-} */
+
+
+@media (max-width: 500px) {
+  h1 {
+    font-size: 36px;
+  }
+  li {
+    Display: block;
+    padding: 5px;
+  }
+
+}
