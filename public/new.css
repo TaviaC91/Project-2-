@@ -1,5 +1,7 @@
 .container {
+text-align: left;
 background-color: lightgrey;
+padding: 5px;
 /* background-image: url('https://i.imgur.com/HpcSg5j.jpg');  */
 height: 500px;
 width: auto;

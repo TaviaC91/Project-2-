@@ -14,3 +14,16 @@ text-align: right;
 .checked {
     color: yellow
 }
+
+.showdiv1 {
+text-align: center;
+}
+
+.showinfo {
+text-align: left;
+}
+
+.overview {
+    padding: auto;
+    margin-top: 0;
+}
