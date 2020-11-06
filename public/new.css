@@ -1,6 +1,6 @@
 .container {
-/* background-color: lightgrey; */
-background-image: url('https://i.imgur.com/HpcSg5j.jpg'); 
+background-color: lightgrey;
+/* background-image: url('https://i.imgur.com/HpcSg5j.jpg');  */
 height: 500px;
 width: auto;
 }
