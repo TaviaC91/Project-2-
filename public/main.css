@@ -1,5 +1,6 @@
 .grid-container {
   display: flex;
+  display: -moz-inline-grid;
   flex-wrap: wrap;
   text-align: center;
   padding: 20px;
@@ -24,7 +25,7 @@ padding: 20px ;
 }
 
 h1 {
-  text-decoration:  black;
+  text-decoration: solid black;
   text-shadow: 2px black;
   font: xx-small;
   }
@@ -78,6 +79,12 @@ transition: border-bottom 0.5s;
 border: 5px lightgray;
 }
 
+.footer {
+  position: fixed;
+  text-align: center;
+  width: fit-content;
+}
+
 #board {
   border: 3px 3px solid 
 }
@@ -86,6 +93,7 @@ border: 5px lightgray;
   h1 {
     font-size: 36px;
   }
+
   li {
     Display: block;
     padding: 5px;
